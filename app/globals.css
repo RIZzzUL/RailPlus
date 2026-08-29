@@ -1,0 +1,71 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    color-scheme: dark;
+  }
+
+  * {
+    border-color: hsl(215 28% 17%);
+  }
+
+  html,
+  body {
+    height: 100%;
+    background-color: #020617; /* slate-950 */
+  }
+
+  body {
+    color: #e2e8f0; /* slate-200 */
+    font-feature-settings: "rlig" 1, "calt" 1;
+    -webkit-font-smoothing: antialiased;
+  }
+}
+
+@layer utilities {
+  .scrollbar-thin::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+  }
+  .scrollbar-thin::-webkit-scrollbar-thumb {
+    border-radius: 9999px;
+    background-color: hsl(215 28% 20%);
+  }
+  .scrollbar-thin::-webkit-scrollbar-thumb:hover {
+    background-color: hsl(215 28% 28%);
+  }
+  .scrollbar-thin::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  .bg-grid {
+    background-image:
+      linear-gradient(to right, rgba(148, 163, 184, 0.06) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(148, 163, 184, 0.06) 1px, transparent 1px);
+    background-size: 40px 40px;
+  }
+
+  .rail-text-gradient {
+    background: linear-gradient(90deg, #34d399, #22d3ee);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+}
+
+/* ====== Recharts dark theme overrides ====== */
+.recharts-cartesian-axis-tick text {
+  fill: #64748b;
+  font-size: 11px;
+}
+.recharts-cartesian-grid line {
+  stroke: hsl(215 28% 16% / 0.6);
+}
+.recharts-tooltip-cursor {
+  fill: rgba(148, 163, 184, 0.08);
+}
+.recharts-legend-item-text {
+  color: #94a3b8 !important;
+}
